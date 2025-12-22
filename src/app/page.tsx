@@ -68,15 +68,8 @@ export default async function Home() {
                 className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 inline-block drop-shadow-sm"
               />
             </span>
-            <span
-              className={`${titleScript.className} bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 text-2xl md:text-3xl lg:text-4xl font-semibold`}
-            >
-              Pixel-wise Attention Dissolution and Latent Guidance
-            </span>
-            <span
-              className={`${titleScript.className} bg-clip-text text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 text-2xl md:text-3xl lg:text-4xl font-semibold`}
-            >
-              for Zero-Shot Object Removal
+            <span className="text-xl md:text-2xl lg:text-3xl font-normal text-slate-700">
+              Pixel-wise Attention Dissolution and Latent Guidance for Zero-Shot Object Removal
             </span>
           </h1>
 
