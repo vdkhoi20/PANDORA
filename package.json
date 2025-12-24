@@ -4,12 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "export": "next export",
-    "pages:build": "next build && next export -o docs",
-    "pages:docs": "npm run build && rm -rf docs && mkdir -p docs/_next && mkdir -p docs/_next/static && cp -R .next/static/* docs/_next/static/ && cp -R .next/server/app/* docs/ || true && cp -R public/* docs/ || true && touch docs/.nojekyll"
+    "pages": "next build"
   },
   "dependencies": {
     "next": "15.5.9",
