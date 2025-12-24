@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const isProd = process.env.NODE_ENV === 'production';
-const repoName = 'CPAM'; // Tên chính xác repo của bạn
+const repoName = 'PANDORA'; // Tên chính xác repo của bạn
 
 const nextConfig = {
   output: 'export',
