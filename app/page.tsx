@@ -6,6 +6,7 @@ import fs from "fs";
 import path from "path";
 import { Pacifico } from "next/font/google";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const titleScript = Pacifico({
   subsets: ["latin"],
   weight: "400",
@@ -63,7 +64,7 @@ export default async function Home() {
                 PANDORA
               </span>
               <img
-                src="/eraser.svg"
+                src={`${basePath}/eraser.svg`}
                 alt="Eraser"
                 className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 inline-block drop-shadow-sm"
               />
@@ -215,7 +216,7 @@ export default async function Home() {
                 muted
                 playsInline
               >
-                <source src="/demo_video.mp4" type="video/mp4" />
+                <source src={`${basePath}/demo_video.mp4`} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               {/* Video Labels */}
@@ -250,25 +251,6 @@ export default async function Home() {
             We propose a zero-shot object removal framework that operates directly on pre-trained diffusion models in a single pass, without any fine-tuning, prompt engineering, or inference-time optimization, thus fully leveraging their latent generative capacity for inpainting
           </p>
 
-          {/* Info Box */}
-          {/* <div className="bg-blue-50 border border-blue-200 rounded-lg py-4 px-6 mb-8 text-center">
-            <p className="text-blue-900 flex items-center justify-center gap-2">
-              <span className="text-2xl">👆</span>
-              <span>Slide any image to see results</span>
-            </p>
-          </div> */}
-
-          {/* Image Gallery Grid */}
-          {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            <BeforeAfterSlider beforeSrc="/results/img_1_original.png" afterSrc="/results/img_1_result.png" label="" />
-            <BeforeAfterSlider beforeSrc="/results/img_2_original.png" afterSrc="/results/img_2_result.png" label="" />
-            <BeforeAfterSlider beforeSrc="/results/img_3_original.png" afterSrc="/results/img_3_result.png" label="" />
-            <BeforeAfterSlider beforeSrc="/results/img_4_original.png" afterSrc="/results/img_4_result.png" label="" />
-            <BeforeAfterSlider beforeSrc="/results/img_5_original.png" afterSrc="/results/img_5_result.png" label="" />
-            <BeforeAfterSlider beforeSrc="/results/img_6_original.png" afterSrc="/results/img_6_result.png" label="" />
-            <BeforeAfterSlider beforeSrc="/results/img_7_original.png" afterSrc="/results/img_7_result.png" label="" />
-            <BeforeAfterSlider beforeSrc="/results/img_8_original.png" afterSrc="/results/img_8_result.png" label="" />
-          </div> */}
         </div>
       </section>
 
@@ -312,7 +294,7 @@ export default async function Home() {
             {/* Approach Diagram */}
             <div className="bg-white rounded-lg p-6 border border-gray-200">
               <img
-                src="/pipeline.png"
+                src={`${basePath}/pipeline.png`}
                 alt="PANDORA Pipeline Diagram"
                 className="w-full h-auto rounded"
               />
@@ -372,7 +354,7 @@ export default async function Home() {
           {/* Qualitative Comparison Image */}
           <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
             <img
-              src="/qualitative.png"
+              src={`${basePath}/qualitative.png`}
               alt="Qualitative comparison of object removal methods"
               className="w-full h-auto rounded shadow-lg"
             />

@@ -1,18 +1,18 @@
 /** @type {import('next').NextConfig} */
 
 const isProd = process.env.NODE_ENV === 'production';
-const repoName = 'PANDORA'; // Tên chính xác repo của bạn
+const repoName = 'PANDORA';
 
 const nextConfig = {
   output: 'export',
-  
-  // Quan trọng: Thêm tên repo vào đường dẫn khi chạy production (build)
-  // Nếu đang chạy local (npm run dev) thì không cần
   basePath: isProd ? `/${repoName}` : '',
   assetPrefix: isProd ? `/${repoName}/` : '',
-
   images: {
     unoptimized: true,
+  },
+  // Thêm dòng này để dùng biến global trong code React
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProd ? `/${repoName}` : '',
   },
 };
 
