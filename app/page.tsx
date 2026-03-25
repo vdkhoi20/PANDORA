@@ -136,7 +136,7 @@ export default async function Home() {
           {/* Affiliations */}
           <div className="text-xs md:text-sm lg:text-base mb-4 flex flex-col items-center justify-center gap-y-1 text-slate-600">
             <span>
-              <sup className="mr-0.5">1</sup>University of Science, Ho Chi Minh City, Vietnam
+              <sup className="mr-0.5">1</sup>University of Science, VNU-HCM, Ho Chi Minh City, Vietnam
             </span>
             <span>
               <sup className="mr-0.5">2</sup>Vietnam National University, Ho Chi Minh City, Vietnam
