@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "pages": "next build"
+    "pages": "next build",
+    "deploy:docs": "next build && rm -rf docs/* && cp -R out/* docs/ && touch docs/.nojekyll"
   },
   "dependencies": {
     "next": "15.5.9",
