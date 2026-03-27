@@ -403,7 +403,7 @@ export default async function Home() {
                 <h3 className="text-xl font-semibold text-amber-900">Funding and GPU Support</h3>
               </div>
               <p className="text-lg leading-relaxed text-amber-800">
-                This research is funded by the Vietnam National Foundation for Science and Technology Development (NAFOSTED) under Grant Number 102.05-2023.31. This research is funded by Vietnam National University - Ho Chi Minh City (VNU-HCM) under Grant Number B2026-18-17. This research used the GPUs provided by the Intelligent Systems Lab at the Faculty of Information Technology, University of Science, VNU-HCM.
+                 This research is funded by Vietnam National University - Ho Chi Minh City (VNU-HCM) under Grant Number B2026-18-17. This research used the GPUs provided by the Intelligent Systems Lab at the Faculty of Information Technology, University of Science, VNU-HCM.
               </p>
             </div>
 
