@@ -372,27 +372,24 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* BibTeX Section - Commented for now
+      {/* BibTeX Section */}
       <section className="py-16 px-4 bg-white text-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="flex gap-8">
             <h2 className="text-3xl font-bold uppercase min-w-fit">BibTex</h2>
             <div className="flex-1">
               <pre className="bg-gray-50 border border-gray-200 rounded-lg p-6 overflow-x-auto text-sm font-mono">
-{`@misc{winter2024objectdrop,
-      title={ObjectDrop: Bootstrapping Counterfactuals for Photorealistic Object Removal and Insertion},
-      author={Daniel Winter and Matan Cohen and Shlomi Fruchter and Yael Pritch and Alex Rav-Acha and Yedid Hoshen},
-      year={2024},
-      eprint={2403.18818},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+{`@inproceedings{Vo2026ICME,
+  title = {PANDORA: Pixel-wise Attention Dissolution and Latent Guidance for Zero-Shot Object Removal},
+  author = {Vo, Dinh-Khoi and Nguyen, Van-Loc and Nguyen, Tam V. and Tran, Minh-Triet and Le, Trung-Nghia},
+  booktitle = {IEEE International Conference on Multimedia and Expo (ICME)},
+  year = {2026},
 }`}
               </pre>
             </div>
           </div>
         </div>
       </section>
-      */}
 
       {/* Acknowledgment Section */}
       <section className="py-16 px-4 bg-gray-200 text-gray-900">
