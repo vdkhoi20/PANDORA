@@ -154,23 +154,13 @@ export default async function Home() {
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-14">
             <a
-              href="/PANDORA.pdf"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 text-white text-sm md:text-base font-medium shadow-sm hover:bg-slate-800 transition-colors"
+              href="https://arxiv.org/abs/2603.27555"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-slate-700 text-sm md:text-base font-medium border border-slate-200 shadow-sm hover:bg-slate-50 transition-colors"
+              target="_blank"
               rel="noopener noreferrer"
-            >
-              <span className="text-lg">📄</span>
-              <span>Paper PDF</span>
-            </a>
-            <a
-              href="#"
-              className="relative inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-slate-700 text-sm md:text-base font-medium border border-slate-200 shadow-sm cursor-not-allowed opacity-80"
-              title="Coming soon"
             >
               <span className="text-lg">🧾</span>
               <span>arXiv</span>
-              <span className="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-semibold tracking-wide">
-                SOON
-              </span>
             </a>
             <a
               href="#"
