@@ -152,7 +152,7 @@ export default async function Home() {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 mb-14">
+          <div className="flex flex-wrap items-center justify-center gap-5 md:gap-6 mb-14">
             <a
               href="https://arxiv.org/abs/2603.27555"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-slate-700 text-sm md:text-base font-medium border border-slate-200 shadow-sm hover:bg-slate-50 transition-colors"
@@ -160,7 +160,18 @@ export default async function Home() {
               rel="noopener noreferrer"
             >
               <span className="text-lg">🧾</span>
-              <span>arXiv</span>
+              <span>arXiv (Paper)</span>
+            </a>
+            <a
+              href="#"
+              className="relative inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-slate-700 text-sm md:text-base font-medium border border-slate-200 shadow-sm cursor-not-allowed opacity-80"
+              title="Coming soon"
+            >
+              <span className="text-lg">🧾</span>
+              <span>arXiv (Demo)</span>
+              <span className="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-semibold tracking-wide">
+                SOON
+              </span>
             </a>
             <a
               href="#"
@@ -194,29 +205,15 @@ export default async function Home() {
           </div>
 
           {/* Hero Video Demo */}
-          <div className="max-w-4xl mx-auto bg-white/80 border border-slate-100 rounded-3xl p-6 md:p-8 shadow-sm">
-            <h2 className="text-2xl md:text-3xl text-slate-800 font-semibold mb-4 md:mb-6">
-              Demo Video
-            </h2>
-            <div className="aspect-video bg-slate-900 rounded-2xl overflow-hidden relative shadow-md">
-              <video
-                className="w-full h-full object-cover"
-                controls
-                loop
-                muted
-                playsInline
-              >
-                <source src={`${basePath}/demo_video.mp4`} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              {/* Video Labels */}
-              <div className="absolute top-4 left-4 bg-black/60 backdrop-blur px-3 py-1 rounded-full text-xs md:text-sm font-medium text-white">
-                Original
-              </div>
-              <div className="absolute top-4 right-4 bg-black/60 backdrop-blur px-3 py-1 rounded-full text-xs md:text-sm font-medium text-white">
-                Result
-              </div>
-            </div>
+          <div className="aspect-video bg-slate-900 rounded-2xl overflow-hidden relative shadow-md">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/KPLTfBIdX0M"
+              title="Demo Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </section>
@@ -374,8 +371,15 @@ export default async function Home() {
   author = {Vo, Dinh-Khoi and Nguyen, Van-Loc and Nguyen, Tam V. and Tran, Minh-Triet and Le, Trung-Nghia},
   booktitle = {IEEE International Conference on Multimedia and Expo (ICME)},
   year = {2026},
+}
+
+@inproceedings{Vo2026DemoICME,
+  title={Zero-Shot Mass-Similar and Multi-Object Removal in Single Pass},
+  author={Dinh-Khoi Vo and Van-Loc Nguyen and Tam V. Nguyen and Minh-Triet Tran and Trung-Nghia Le},
+  booktitle={IEEE International Conference on Multimedia and Expo (ICME)},
+  year={2026},
 }`}
-              </pre>
+</pre>
             </div>
           </div>
         </div>
