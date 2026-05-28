@@ -479,6 +479,37 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Related Projects Section */}
+      <section className="py-16 px-4 bg-slate-50 text-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold uppercase text-center mb-6">Related Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <a
+              href="https://vdkhoi20.github.io/CPAM/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-white border border-slate-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="text-xl font-semibold text-sky-700 mb-2">CPAM</h3>
+              <p className="text-slate-700 leading-relaxed">
+                Context-Preserving Adaptive Manipulation for zero-shot real image editing.
+              </p>
+            </a>
+            <a
+              href="https://vdkhoi20.github.io/FocusDiff/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-white border border-slate-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h3 className="text-xl font-semibold text-emerald-700 mb-2">FocusDiff</h3>
+              <p className="text-slate-700 leading-relaxed">
+                Target-aware refocusing for tuning-free diffusion editing and 360-degree panorama editing.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* BibTeX Section */}
       <section className="py-16 px-4 bg-white text-gray-900">
         <div className="max-w-6xl mx-auto">
@@ -502,6 +533,24 @@ export default async function Home() {
   year={2026},
   url = {https://vdkhoi20.github.io/PANDORA/},
   code = {https://github.com/vdkhoi20/PANDORA},
+}
+
+@article{vo2025cpam,
+  title={CPAM: Context-Preserving Adaptive Manipulation for Zero-Shot Real Image Editing},
+  author={Vo, Dinh-Khoi and Do, Thanh-Toan and Nguyen, Tam V. and Tran, Minh-Triet and Le, Trung-Nghia},
+  journal={arXiv preprint arXiv:2506.18438},
+  year={2025},
+  url={https://arxiv.org/abs/2506.18438},
+  code={https://github.com/vdkhoi20/CPAM}
+}
+
+@inproceedings{vo2026focusdiff,
+  title={Toward 360-Degree Indoor Panorama Editing via Tuning-Free Diffusion Model with Refocusing Cross-Attention},
+  author={Vo, Dinh-Khoi and Le-Hinh, Nhut-Thanh and Huynh, Viet-Tham and Nguyen, Tam V. and Tran, Minh-Triet and Le, Trung-Nghia},
+  booktitle={International Conference on Computational Collective Intelligence},
+  year={2026},
+  url={https://vdkhoi20.github.io/FocusDiff/},
+  code={https://github.com/vdkhoi20/FocusDiff}
 }`}
 </pre>
             </div>

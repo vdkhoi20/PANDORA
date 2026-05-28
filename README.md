@@ -163,3 +163,25 @@ GPU smoke benchmarks were also completed for 5 samples with 50 DDIM steps on SD1
   code = {https://github.com/vdkhoi20/PANDORA},
 }
 ```
+
+Related projects from our group:
+
+```bibtex
+@article{vo2025cpam,
+  title={CPAM: Context-Preserving Adaptive Manipulation for Zero-Shot Real Image Editing},
+  author={Vo, Dinh-Khoi and Do, Thanh-Toan and Nguyen, Tam V. and Tran, Minh-Triet and Le, Trung-Nghia},
+  journal={arXiv preprint arXiv:2506.18438},
+  year={2025},
+  url={https://arxiv.org/abs/2506.18438},
+  code={https://github.com/vdkhoi20/CPAM}
+}
+
+@inproceedings{vo2026focusdiff,
+  title={Toward 360-Degree Indoor Panorama Editing via Tuning-Free Diffusion Model with Refocusing Cross-Attention},
+  author={Vo, Dinh-Khoi and Le-Hinh, Nhut-Thanh and Huynh, Viet-Tham and Nguyen, Tam V. and Tran, Minh-Triet and Le, Trung-Nghia},
+  booktitle={International Conference on Computational Collective Intelligence},
+  year={2026},
+  url={https://vdkhoi20.github.io/FocusDiff/},
+  code={https://github.com/vdkhoi20/FocusDiff}
+}
+```
