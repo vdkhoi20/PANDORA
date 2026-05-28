@@ -9,6 +9,8 @@ Official implementation for **PANDORA: Pixel-wise Attention Dissolution and Late
 
 > **Accepted to IEEE International Conference on Multimedia and Expo (ICME) 2026.**
 
+![PANDORA teaser](public/paper_teaser.jpg)
+
 PANDORA removes objects directly on pretrained diffusion models without fine-tuning, text prompts, or per-image optimization. This repository provides a cleaned runner for Stable Diffusion v1.5, Stable Diffusion 2.1, and Stable Diffusion XL.
 
 ## Highlights
@@ -167,11 +169,11 @@ GPU smoke benchmarks were also completed for 5 samples with 50 DDIM steps on SD1
 Related projects from our group:
 
 ```bibtex
-@article{vo2025cpam,
+@article{vo2026cpam,
   title={CPAM: Context-Preserving Adaptive Manipulation for Zero-Shot Real Image Editing},
   author={Vo, Dinh-Khoi and Do, Thanh-Toan and Nguyen, Tam V. and Tran, Minh-Triet and Le, Trung-Nghia},
-  journal={arXiv preprint arXiv:2506.18438},
-  year={2025},
+  journal={IEEE Transactions on Multimedia},
+  year={2026},
   url={https://arxiv.org/abs/2506.18438},
   code={https://github.com/vdkhoi20/CPAM}
 }
