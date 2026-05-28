@@ -149,6 +149,14 @@ export default async function Home() {
             &#123;vdkhoi, nvloc&#125;@selab.hcmus.edu.vn, tamnguyen@udayton.edu, &#123;tmtriet, ltnghia&#125;@fit.hcmus.edu.vn
           </div>
 
+          <div className="mb-8 flex justify-center">
+            <div className="inline-flex flex-col sm:flex-row items-center gap-2 rounded-full border border-emerald-300 bg-emerald-50 px-6 py-3 text-emerald-900 shadow-sm">
+              <span className="text-sm font-bold uppercase tracking-wide">Accepted</span>
+              <span className="hidden sm:inline h-5 w-px bg-emerald-300" />
+              <span className="text-base md:text-lg font-semibold">IEEE ICME 2026</span>
+            </div>
+          </div>
+
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-5 md:gap-6 mb-14">
             <a
@@ -376,6 +384,8 @@ export default async function Home() {
   author = {Vo, Dinh-Khoi and Nguyen, Van-Loc and Nguyen, Tam V. and Tran, Minh-Triet and Le, Trung-Nghia},
   booktitle = {IEEE International Conference on Multimedia and Expo (ICME)},
   year = {2026},
+  url = {https://arxiv.org/abs/2603.27555},
+  code = {https://github.com/vdkhoi20/PANDORA},
 }
 
 @inproceedings{Vo2026DemoICME,
@@ -383,6 +393,8 @@ export default async function Home() {
   author={Dinh-Khoi Vo and Van-Loc Nguyen and Tam V. Nguyen and Minh-Triet Tran and Trung-Nghia Le},
   booktitle={IEEE International Conference on Multimedia and Expo (ICME)},
   year={2026},
+  url = {https://vdkhoi20.github.io/PANDORA/},
+  code = {https://github.com/vdkhoi20/PANDORA},
 }`}
 </pre>
             </div>

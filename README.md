@@ -3,8 +3,11 @@
 Official implementation for **PANDORA: Pixel-wise Attention Dissolution and Latent Guidance for Zero-Shot Object Removal**.
 
 [![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://vdkhoi20.github.io/PANDORA/)
+[![arXiv](https://img.shields.io/badge/arXiv-2603.27555-b31b1b)](https://arxiv.org/abs/2603.27555)
 [![Code](https://img.shields.io/badge/GitHub-Code-black)](https://github.com/vdkhoi20/PANDORA)
-[![ICME 2026](https://img.shields.io/badge/ICME-2026-emerald)](https://vdkhoi20.github.io/PANDORA/)
+[![ICME 2026](https://img.shields.io/badge/Accepted-ICME%202026-emerald)](https://vdkhoi20.github.io/PANDORA/)
+
+> **Accepted to IEEE International Conference on Multimedia and Expo (ICME) 2026.**
 
 PANDORA removes objects directly on pretrained diffusion models without fine-tuning, text prompts, or per-image optimization. This repository provides a cleaned runner for Stable Diffusion v1.5, Stable Diffusion 2.1, and Stable Diffusion XL.
 
@@ -112,6 +115,8 @@ GPU smoke benchmarks were also completed for 5 samples with 50 DDIM steps on SD1
 ## Related Projects
 
 - [PANDORA Project Page](https://vdkhoi20.github.io/PANDORA/)
+- [Paper on arXiv](https://arxiv.org/abs/2603.27555)
+- [Public Code](https://github.com/vdkhoi20/PANDORA)
 - [CPAM](https://vdkhoi20.github.io/CPAM/)
 - [FocusDiff](https://vdkhoi20.github.io/FocusDiff/)
 
@@ -123,6 +128,8 @@ GPU smoke benchmarks were also completed for 5 samples with 50 DDIM steps on SD1
   author = {Vo, Dinh-Khoi and Nguyen, Van-Loc and Nguyen, Tam V. and Tran, Minh-Triet and Le, Trung-Nghia},
   booktitle = {IEEE International Conference on Multimedia and Expo (ICME)},
   year = {2026},
+  url = {https://arxiv.org/abs/2603.27555},
+  code = {https://github.com/vdkhoi20/PANDORA},
 }
 
 @inproceedings{Vo2026DemoICME,
@@ -130,5 +137,7 @@ GPU smoke benchmarks were also completed for 5 samples with 50 DDIM steps on SD1
   author={Dinh-Khoi Vo and Van-Loc Nguyen and Tam V. Nguyen and Minh-Triet Tran and Trung-Nghia Le},
   booktitle={IEEE International Conference on Multimedia and Expo (ICME)},
   year={2026},
+  url = {https://vdkhoi20.github.io/PANDORA/},
+  code = {https://github.com/vdkhoi20/PANDORA},
 }
 ```
