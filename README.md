@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PANDORA
 
-## Getting Started
+Official implementation for **PANDORA: Pixel-wise Attention Dissolution and Latent Guidance for Zero-Shot Object Removal**.
 
-First, run the development server:
+[![Project Page](https://img.shields.io/badge/Project-Page-blue)](https://vdkhoi20.github.io/PANDORA/)
+[![Code](https://img.shields.io/badge/GitHub-Code-black)](https://github.com/vdkhoi20/PANDORA)
+[![ICME 2026](https://img.shields.io/badge/ICME-2026-emerald)](https://vdkhoi20.github.io/PANDORA/)
+
+PANDORA removes objects directly on pretrained diffusion models without fine-tuning, text prompts, or per-image optimization. This repository provides a cleaned runner for Stable Diffusion v1.5, Stable Diffusion 2.1, and Stable Diffusion XL.
+
+## Highlights
+
+- **Prompt-free object removal** with only an input image and binary mask.
+- **Pixel-wise Attention Dissolution (PAD)** for suppressing object evidence in self-attention.
+- **Localized Attentional Disentanglement Guidance (LADG)** for masked latent guidance.
+- Unified code path for **SD1.5**, **SD2.1**, and **SDXL**.
+- Included object-removal benchmark under `datasets/object_removal`.
+
+## Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/vdkhoi20/PANDORA.git
+cd PANDORA
+
+conda create -n pandora python=3.10 -y
+conda activate pandora
+pip install torch torchvision diffusers transformers accelerate safetensors einops pillow numpy tqdm
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The SDXL version is memory intensive. A GPU with at least 24 GB VRAM is recommended for 1024 x 1024 inference.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run one image:
 
-## Learn More
+```bash
+python run_pandora.py \
+  --version sd21 \
+  --image path/to/image.jpg \
+  --mask path/to/mask.png \
+  --output results/example.png
+```
 
-To learn more about Next.js, take a look at the following resources:
+Run the benchmark:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+python run_pandora.py \
+  --version sd15 \
+  --dataset datasets/object_removal \
+  --output results/pandora_sd15
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+python run_pandora.py \
+  --version sd21 \
+  --dataset datasets/object_removal \
+  --output results/pandora_sd21
 
-## Deploy on Vercel
+python run_pandora.py \
+  --version sdxl \
+  --dataset datasets/object_removal \
+  --output results/pandora_sdxl
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Useful options:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+--steps 50
+--guidance-scale-ladg 1.6
+--percentile 95
+--cache-dir /path/to/huggingface_cache
+--local-files-only
+--limit 5
+```
+
+## Supported Backbones
+
+| Version | Default model | Resolution | Notes |
+| --- | --- | ---: | --- |
+| `sd15` | `botp/stable-diffusion-v1-5` | 512 | Original PANDORA backbone |
+| `sd21` | `sd2-community/stable-diffusion-2-1` | 768 | Uses `v_prediction` scheduler |
+| `sdxl` | `stabilityai/stable-diffusion-xl-base-1.0` | 1024 | Newly added SDXL backend |
+
+## Dataset Layout
+
+The included benchmark follows this structure:
+
+```text
+datasets/object_removal/
+  Dataset_type1/
+    Images/
+    Masks/
+  Dataset_type2/
+    Images/
+    Masks/
+  Dataset_type3/
+    Images/
+    Masks/
+```
+
+Masks should be binary PNG files with the same stem as the corresponding image.
+
+## Verification
+
+The refactored runner was checked with:
+
+```bash
+python -m compileall -q pandora_script run_pandora.py
+python run_pandora.py --help
+```
+
+GPU smoke benchmarks were also completed for 5 samples with 50 DDIM steps on SD1.5, SD2.1, and SDXL.
+
+## Related Projects
+
+- [PANDORA Project Page](https://vdkhoi20.github.io/PANDORA/)
+- [CPAM](https://vdkhoi20.github.io/CPAM/)
+- [FocusDiff](https://vdkhoi20.github.io/FocusDiff/)
+
+## Citation
+
+```bibtex
+@inproceedings{Vo2026ICME,
+  title = {PANDORA: Pixel-wise Attention Dissolution and Latent Guidance for Zero-Shot Object Removal},
+  author = {Vo, Dinh-Khoi and Nguyen, Van-Loc and Nguyen, Tam V. and Tran, Minh-Triet and Le, Trung-Nghia},
+  booktitle = {IEEE International Conference on Multimedia and Expo (ICME)},
+  year = {2026},
+}
+
+@inproceedings{Vo2026DemoICME,
+  title={Zero-Shot Mass-Similar and Multi-Object Removal in Single Pass},
+  author={Dinh-Khoi Vo and Van-Loc Nguyen and Tam V. Nguyen and Minh-Triet Tran and Trung-Nghia Le},
+  booktitle={IEEE International Conference on Multimedia and Expo (ICME)},
+  year={2026},
+}
+```

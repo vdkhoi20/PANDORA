@@ -43,3 +43,15 @@ next-env.d.ts
 backup_images/
 
 python_scripts/
+
+# Python/cache artifacts
+__pycache__/
+*.py[cod]
+
+# Local generated outputs
+benchmark_outputs/
+smoke_outputs/
+results/
+
+# Paper source drafts should stay local
+Images_in_Paper/

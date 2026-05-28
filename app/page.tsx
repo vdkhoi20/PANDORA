@@ -1,6 +1,4 @@
-import BeforeAfterSlider from "./components/BeforeAfterSlider";
 import HoverClickGallery from "./components/HoverClickGallery";
-import InteractiveDemo from "./components/InteractiveDemo";
 import QuantitativeTable from "./components/QuantitativeTable";
 import fs from "fs";
 import path from "path";
@@ -174,15 +172,22 @@ export default async function Home() {
               </span>
             </a>
             <a
-              href="#"
-              className="relative inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-slate-700 text-sm md:text-base font-medium border border-slate-200 shadow-sm cursor-not-allowed opacity-80"
-              title="Coming soon"
+              href="https://github.com/vdkhoi20/PANDORA"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-slate-700 text-sm md:text-base font-medium border border-slate-200 shadow-sm hover:bg-slate-50 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <span className="text-lg">💻</span>
               <span>Code</span>
-              <span className="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] px-1.5 py-0.5 rounded-full font-semibold tracking-wide">
-                SOON
-              </span>
+            </a>
+            <a
+              href="https://github.com/vdkhoi20/PANDORA/tree/main/datasets/object_removal"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-slate-700 text-sm md:text-base font-medium border border-slate-200 shadow-sm hover:bg-slate-50 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="text-lg">📦</span>
+              <span>Dataset</span>
             </a>
             <a
               href="https://4e5fb5a771209acf2f.gradio.live/"
