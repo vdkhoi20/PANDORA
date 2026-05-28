@@ -228,6 +228,14 @@ export default async function Home() {
               allowFullScreen
             ></iframe>
           </div>
+
+          <div className="mt-10 bg-white rounded-xl p-4 border border-slate-200 shadow-sm">
+            <img
+              src={`${basePath}/paper_teaser.jpg`}
+              alt="PANDORA teaser results"
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
         </div>
       </section>
 
@@ -251,6 +259,37 @@ export default async function Home() {
             We propose a zero-shot object removal framework that operates directly on pre-trained diffusion models in a single pass, without any fine-tuning, prompt engineering, or inference-time optimization, thus fully leveraging their latent generative capacity for inpainting
           </p>
 
+        </div>
+      </section>
+
+      {/* Benchmark Section */}
+      <section className="py-16 px-4 bg-slate-50 text-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold uppercase text-center mb-6">Benchmark</h2>
+          <p className="text-lg text-center max-w-4xl mx-auto leading-relaxed mb-8">
+            The PANDORA benchmark evaluates single-object, multi-object, and mass-similar object removal with manually or automatically prepared binary masks.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+            <div className="bg-white border border-slate-200 rounded-lg p-6 text-center shadow-sm">
+              <div className="text-4xl font-bold text-sky-600 mb-2">75</div>
+              <div className="font-semibold text-slate-900">Single-object samples</div>
+            </div>
+            <div className="bg-white border border-slate-200 rounded-lg p-6 text-center shadow-sm">
+              <div className="text-4xl font-bold text-emerald-600 mb-2">17</div>
+              <div className="font-semibold text-slate-900">Multi-object samples</div>
+            </div>
+            <div className="bg-white border border-slate-200 rounded-lg p-6 text-center shadow-sm">
+              <div className="text-4xl font-bold text-violet-600 mb-2">94</div>
+              <div className="font-semibold text-slate-900">Mass-similar samples</div>
+            </div>
+          </div>
+          <div className="bg-white rounded-lg p-4 border border-slate-200 shadow-sm">
+            <img
+              src={`${basePath}/qualitative_main.jpg`}
+              alt="PANDORA benchmark qualitative examples"
+              className="w-full h-auto rounded"
+            />
+          </div>
         </div>
       </section>
 
@@ -279,6 +318,30 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Demo System Section */}
+      <section className="py-16 px-4 bg-white text-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold uppercase text-center mb-6">Clutter Erase Demo</h2>
+          <p className="text-lg text-center max-w-4xl mx-auto leading-relaxed mb-8">
+            The demo system supports manual mask drawing, prompt-based selection, click-based segmentation, and similar-object search, enabling prompt-free mass-similar and multi-object removal in a single pass.
+          </p>
+          <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 mb-8">
+            <img
+              src={`${basePath}/clutter_erase_ui.jpg`}
+              alt="Clutter Erase user interface"
+              className="w-full h-auto rounded"
+            />
+          </div>
+          <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+            <img
+              src={`${basePath}/pipeline_demo.png`}
+              alt="Clutter Erase demo pipeline"
+              className="w-full h-auto rounded"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Approach Section */}
       <section className="py-16 px-4 bg-gray-100 text-gray-900">
         <div className="max-w-6xl mx-auto">
@@ -294,7 +357,7 @@ export default async function Home() {
             {/* Approach Diagram */}
             <div className="bg-white rounded-lg p-6 border border-gray-200">
               <img
-                src={`${basePath}/pipeline.png`}
+                src={`${basePath}/pipeline_main.png`}
                 alt="PANDORA Pipeline Diagram"
                 className="w-full h-auto rounded"
               />
@@ -362,12 +425,56 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* Additional Results Section */}
+      <section className="py-16 px-4 bg-slate-50 text-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold uppercase text-center mb-6">Additional Results</h2>
+          <p className="text-lg text-center max-w-4xl mx-auto leading-relaxed mb-8">
+            PANDORA handles diverse object-removal settings while preserving the visible background structure and texture consistency.
+          </p>
+          <div className="bg-white rounded-lg p-4 border border-slate-200 shadow-sm">
+            <img
+              src={`${basePath}/qualitative_demo.jpg`}
+              alt="Additional qualitative comparison for PANDORA"
+              className="w-full h-auto rounded"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Quantitative Comparison Section */}
       <section className="py-16 px-4 bg-gray-50 text-gray-900">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold uppercase text-center mb-6">Quantitative Comparison</h2>
           <div className="bg-white rounded-lg p-6 border border-gray-200">
             <QuantitativeTable />
+          </div>
+        </div>
+      </section>
+
+      {/* Limitations Section */}
+      <section className="py-16 px-4 bg-white text-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold uppercase text-center mb-6">Limitations</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="bg-rose-50 border border-rose-200 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-rose-900 mb-2">Threshold Sensitivity</h3>
+              <p className="text-rose-800 leading-relaxed">
+                A fixed percentile threshold in PAD may over-filter or under-filter attention depending on the object and image content.
+              </p>
+            </div>
+            <div className="bg-amber-50 border border-amber-200 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-amber-900 mb-2">Mask Quality</h3>
+              <p className="text-amber-800 leading-relaxed">
+                Accurate binary masks remain important. Undersized masks can leave residual object artifacts, while moderately oversized masks are usually tolerated.
+              </p>
+            </div>
+            <div className="bg-sky-50 border border-sky-200 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-sky-900 mb-2">Future Direction</h3>
+              <p className="text-sky-800 leading-relaxed">
+                Adaptive thresholding and automatic mask selection are promising directions for making the system more robust.
+              </p>
+            </div>
           </div>
         </div>
       </section>

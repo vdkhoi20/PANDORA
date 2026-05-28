@@ -18,6 +18,7 @@ PANDORA removes objects directly on pretrained diffusion models without fine-tun
 - **Localized Attentional Disentanglement Guidance (LADG)** for masked latent guidance.
 - Unified code path for **SD1.5**, **SD2.1**, and **SDXL**.
 - Included object-removal benchmark under `datasets/object_removal`.
+- Project page includes paper figures for the main pipeline, qualitative comparison, benchmark cases, and the Clutter Erase demo system.
 
 ## Installation
 
@@ -100,6 +101,27 @@ datasets/object_removal/
 ```
 
 Masks should be binary PNG files with the same stem as the corresponding image.
+
+The benchmark covers **75 single-object**, **17 multi-object**, and **94 mass-similar object** samples, with manually or automatically prepared masks.
+
+## Demo System
+
+The accompanying **Clutter Erase** demo is powered by PANDORA and supports:
+
+- Manual mask drawing.
+- Prompt-based object selection.
+- Click-based segmentation.
+- Similar-object search for mass-similar removal.
+
+These interactions are designed for prompt-free, fine-tuning-free object removal in a single forward pass.
+
+## Method Overview
+
+PANDORA first inverts the input image into the diffusion noise space and stores intermediate latents. During denoising, it uses **Background Preservation Attention (BPA)** to protect unmasked regions, **Pixel-wise Attention Dissolution (PAD)** to suppress object information in self-attention, and **Localized Attentional Disentanglement Guidance (LADG)** to steer the masked latent trajectory toward clean object removal.
+
+## Limitations
+
+PANDORA can be sensitive to the PAD percentile threshold and the quality of the binary mask. Undersized masks may leave residual artifacts, while moderately oversized masks are usually more forgiving. Future work includes adaptive thresholding and automatic mask selection.
 
 ## Verification
 
